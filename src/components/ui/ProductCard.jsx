@@ -2,7 +2,7 @@ import { ShoppingCart } from "lucide-react";
 
 export default function ProductCard({ product, onAddToCart }) {
   return (
-    <div className="border rounded-lg shadow-sm overflow-hidden bg-white hover:shadow-md transition p-4 flex flex-col">
+    <div className="text-left border rounded-lg shadow-sm overflow-hidden bg-white hover:shadow-md transition p-4 flex flex-col">
       <img
         src={product.imageUrl} // Используем imageUrl из Firebase
         alt={product.name}

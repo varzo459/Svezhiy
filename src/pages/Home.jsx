@@ -33,8 +33,8 @@ export default function Home() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 pb-20">
-      <h1 className="text-3xl font-bold text-gray-800 mt-6 mb-4">
-        Все продукты
+      <h1 className="text-4xl font-bold text-gray-800 mt-6 mb-4">
+        Продукты
       </h1>
 
       {error && (
@@ -57,21 +57,21 @@ export default function Home() {
         </div>
       )}
 
-      <h2 className="text-2xl font-bold text-gray-800 mt-12 mb-4">Категории</h2>
+      <h2 className="text-4xl font-bold text-gray-800 mt-12 mb-4">Категории</h2>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
         <CategoryCard
           title="Овощи"
-          image="https://images.unsplash.com/photo-1540420828642-fca2c5c18abe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+          image="https://avatars.mds.yandex.net/i?id=6b06d962c8aa02fe120deef0fd4f605e_l-12822923-images-thumbs&n=13"
           to="/category/vegetables"
         />
         <CategoryCard
           title="Фрукты"
-          image="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+          image="https://avatars.mds.yandex.net/i?id=5a7308f644255a9eb70428202a956b73_l-5221472-images-thumbs&n=13"
           to="/category/fruits"
         />
         <CategoryCard
           title="Молочные продукты"
-          image="https://images.unsplash.com/photo-1563636619-e9143da7973b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+          image="https://s.alicdn.com/@sc03/kf/A0e7b5f5174a94ddc9210b7dc6ef86c9c6.png"
           to="/category/dairy"
         />
       </div>

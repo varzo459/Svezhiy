@@ -40,14 +40,32 @@ export async function getProducts() {
 
 export async function getProductsByCategory(category) {
   try {
+    console.log("🔍 Ищем продукты категории:", category);
+
     const q = query(
       collection(db, "products"),
       where("category", "==", category)
     );
+
     const snap = await getDocs(q);
-    return snap.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+    console.log("📄 Найдено продуктов:", snap.docs.length);
+
+    const products = snap.docs.map((doc) => {
+      const data = doc.data();
+      console.log(
+        "📋 Продукт:",
+        doc.id,
+        data.name,
+        "Категория:",
+        data.category
+      );
+      return { id: doc.id, ...doc.data() };
+    });
+
+    return products;
   } catch (error) {
-    return handleFirestoreError(error);
+    console.error("❌ Error getting products by category:", error);
+    return [];
   }
 }
 
@@ -164,9 +182,14 @@ export async function getAllOrders() {
   try {
     const q = query(collection(db, "orders"), orderBy("createdAt", "desc"));
     const snap = await getDocs(q);
-    return snap.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+    return snap.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+      createdAt: doc.data().createdAt?.toDate?.() || new Date(),
+    }));
   } catch (error) {
-    return handleFirestoreError(error);
+    console.error("❌ Error getting all orders:", error);
+    return [];
   }
 }
 

@@ -10,12 +10,12 @@ export default function Profile() {
 
   return (
     <div className="max-w-xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold text-gray-800 mb-6">Профиль</h1>
+      <h1 className="text-4xl font-bold text-gray-800 mt-6 mb-4">Профиль</h1>
 
       <div className="bg-white border rounded-xl shadow-sm p-6 flex flex-col items-center gap-4">
         <img
           src={user.photoURL || "https://placehold.co/100x100"}
-          alt="avatar"
+          alt="Аватарка"
           className="w-28 h-28 rounded-full object-cover border"
         />
 

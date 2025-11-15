@@ -12,7 +12,7 @@ export default function Cart() {
   const navigate = useNavigate();
   const { user } = useAuth();
   const [checkoutLoading, setCheckoutLoading] = useState(false);
-  const [address, setAddress] = useState(""); // Добавляем состояние для адреса
+  const [address, setAddress] = useState("");
 
   const increaseQuantity = (id) => {
     const item = cart.find((item) => item.id === id);
@@ -43,9 +43,9 @@ export default function Cart() {
 
     setCheckoutLoading(true);
     try {
-      await createOrder(user.uid, cart, getTotalPrice(), address); // Передаем адрес
+      await createOrder(user.uid, cart, getTotalPrice(), address);
       clearCart();
-      setAddress(""); // Очищаем адрес после заказа
+      setAddress("");
       navigate("/orders");
     } catch (error) {
       console.error("Ошибка при оформлении заказа:", error);
@@ -57,14 +57,17 @@ export default function Cart() {
 
   if (cart.length === 0)
     return (
-      <div className="max-w-3xl mx-auto px-4 py-10 text-center text-gray-600 text-lg">
-        Корзина пуста
+      <div className="max-w-3xl mx-auto px-4 py-10">
+        <h1 className="text-4xl font-bold text-gray-800 mt-6 mb-4">Корзина</h1>
+        <div className="text-center text-gray-600 text-lg py-10">
+          Корзина пуста
+        </div>
       </div>
     );
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold text-gray-800 mb-6">Корзина</h1>
+      <h1 className="text-4xl font-bold text-gray-800 mt-6 mb-4">Корзина</h1>
 
       <div className="space-y-6">
         {cart.map((item) => (

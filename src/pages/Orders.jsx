@@ -60,8 +60,7 @@ export default function Orders() {
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold text-gray-800 mb-6">Мои заказы</h1>
-
+      <h1 className="text-4xl font-bold text-gray-800 mt-6 mb-4">Мои заказы</h1>
       {!user ? (
         <div className="text-gray-600 text-lg text-center py-10">
           Пожалуйста, войдите в систему чтобы увидеть свои заказы.

@@ -25,7 +25,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop navigation */}
-        <nav className="hidden md:flex gap-6 text-gray-800 font-medium">
+        <nav className="text-lg hidden md:flex gap-6 text-gray-800 font-medium">
           <Link to="/" className="hover:text-green-600">
             В магазин
           </Link>
@@ -73,12 +73,6 @@ export default function Header() {
                   className="w-9 h-9 rounded-full border"
                 />
               </Link>
-              <button
-                onClick={handleLogout}
-                className="text-sm text-red-600 hover:text-red-700"
-              >
-                Выйти
-              </button>
             </div>
           ) : (
             <Link to="/auth" className="hidden md:block">

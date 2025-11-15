@@ -1,16 +1,22 @@
-// src/pages/CategoryPage.jsx
+// src/pages/CategoryPage.jsx (очищенная версия)
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getProductsByCategory } from "../services/firestore";
 import ProductCard from "../components/ui/ProductCard";
 import { Loader } from "../components/ui/Loader";
-import { useCart } from "../contexts/CartContext"; // Добавьте этот импорт
+import { useCart } from "../contexts/CartContext";
 
 export default function CategoryPage() {
   const { id } = useParams();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { addToCart } = useCart(); // Получаем функцию добавления в корзину
+  const { addToCart } = useCart();
+
+  const categoryMapping = {
+    vegetables: "Овощи",
+    fruits: "Фрукты",
+    dairy: "Молочные продукты",
+  };
 
   const categoryTitles = {
     vegetables: "Овощи",
@@ -20,23 +26,35 @@ export default function CategoryPage() {
 
   useEffect(() => {
     async function load() {
-      const data = await getProductsByCategory(id);
+      if (!id) return;
+
+      const categoryFromUrl = categoryMapping[id];
+      const data = await getProductsByCategory(categoryFromUrl);
       setProducts(data);
       setLoading(false);
     }
     load();
   }, [id]);
 
+  if (loading) {
+    return (
+      <div className="max-w-7xl mx-auto px-4 py-10">
+        <h1 className="text-4xl font-bold text-gray-800 mt-6 mb-4">
+          {categoryTitles[id] || "Категория"}
+        </h1>
+        <Loader />
+      </div>
+    );
+  }
+
   return (
     <div className="max-w-7xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold text-gray-800 mb-6">
+      <h1 className="text-4xl font-bold text-gray-800 mt-6 mb-4">
         {categoryTitles[id] || "Категория"}
       </h1>
 
-      {loading ? (
-        <Loader />
-      ) : products.length === 0 ? (
-        <div className="text-gray-600 text-lg">
+      {products.length === 0 ? (
+        <div className="text-gray-600 text-lg text-center py-10">
           Нет товаров в этой категории.
         </div>
       ) : (
@@ -45,7 +63,7 @@ export default function CategoryPage() {
             <ProductCard
               key={product.id}
               product={product}
-              onAddToCart={() => addToCart(product)} // Передаем функцию
+              onAddToCart={() => addToCart(product)}
             />
           ))}
         </div>

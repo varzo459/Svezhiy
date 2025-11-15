@@ -97,7 +97,7 @@ export default function AdminProducts() {
       <div className="mb-6">
         <button
           onClick={handleSeedProducts}
-          className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg"
+          className=" bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg"
         >
           Добавить тестовые продукты
         </button>
