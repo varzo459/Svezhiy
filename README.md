@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# My Svezhiy
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🚀 Современное React приложение, созданное с использованием актуальных технологий.
 
-## Available Scripts
+## 📋 О проекте
 
-In the project directory, you can run:
+My Svezhiy - это веб-приложение, построенное на React с использованием современных инструментов разработки. Проект включает в себя полную настройку для разработки, тестирования и продакшн-сборки.
 
-### `npm start`
+## 🛠 Технологии
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Основные технологии
+- React ^19.2.0 - Библиотека для построения пользовательских интерфейсов
+- React DOM ^19.2.0 - Рендеринг React компонентов в DOM
+- React Router DOM ^7.9.5 - Маршрутизация для одностраничных приложений
+- Firebase ^12.5.0 - Backend-as-a-Service платформа
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Стилизация
+- Tailwind CSS ^3.4.18 - Утилитарный CSS фреймворк
+- PostCSS ^8.5.6 - Инструмент для трансформации CSS
+- Autoprefixer ^10.4.21 - PostCSS плагин для автоматического добавления вендорных префиксов
 
-### `npm test`
+### Иконки
+- Lucide React ^0.553.0 - Красивые и согласованные иконки
+- React Icons ^5.5.0 - Коллекция популярных иконок
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Тестирование
+- @testing-library/react ^16.3.0 - Утилиты для тестирования React компонентов
+- @testing-library/jest-dom ^6.9.1 - Кастомные jest matchers для тестирования DOM
+- @testing-library/user-event ^13.5.0 - Симуляция пользовательских событий
+- @testing-library/dom ^10.4.1 - Утилиты для работы с DOM
 
-### `npm run build`
+### Инструменты разработки
+- React Scripts ^5.0.1 - Скрипты и конфигурация Create React App
+- Web Vitals ^2.1.4 - Измерение производительности веб-приложений
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📦 Установка и запуск
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Предварительные требования
+- Node.js (версия 14 или выше) - [Скачать с официального сайта](https://nodejs.org/)
+- Git - система контроля версий - [Скачать с официального сайта](https://git-scm.com/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Установка Git
+Windows:
+1. Скачайте установщик с [официального сайта Git](https://git-scm.com/)
+2. Запустите установщик и следуйте инструкциям
+3. Проверьте установку: `git --version`
 
-### `npm run eject`
+macOS:
+```bash
+# Через Homebrew
+brew install git
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Или скачайте с официального сайта
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Установка зависимостей
+```bash
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Запуск в режиме разработки
+```
+npm start
+```
+Приложение будет доступно по адресу: http://localhost:3000
