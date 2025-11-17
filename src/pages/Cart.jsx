@@ -60,7 +60,7 @@ export default function Cart() {
       <div className="max-w-3xl mx-auto px-4 py-10">
         <h1 className="text-4xl font-bold text-gray-800 mt-6 mb-4">Корзина</h1>
         <div className="text-center text-gray-600 text-lg py-10">
-          Корзина пуста
+          <h2>Упс, здесь пусто :(</h2>
         </div>
       </div>
     );

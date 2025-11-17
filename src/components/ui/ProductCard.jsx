@@ -1,14 +1,18 @@
+// src/components/ui/ProductCard.jsx
 import { ShoppingCart } from "lucide-react";
 
 export default function ProductCard({ product, onAddToCart }) {
   return (
-    <div className="text-left border rounded-lg shadow-sm overflow-hidden bg-white hover:shadow-md transition p-4 flex flex-col">
+    <div className="border rounded-lg shadow-sm overflow-hidden bg-white hover:shadow-md transition p-4 flex flex-col">
       <img
-        src={product.imageUrl} // Используем imageUrl из Firebase
+        src={
+          product.imageUrl ||
+          "https://via.placeholder.com/300x200?text=No+Image"
+        }
         alt={product.name}
         className="w-full h-40 object-cover rounded-md mb-3"
         onError={(e) => {
-          e.target.src = "https://via.placeholder.com/300x200?text=Нет+изображения";
+          e.target.src = "https://via.placeholder.com/300x200?text=No+Image";
         }}
       />
       <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>

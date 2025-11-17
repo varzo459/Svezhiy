@@ -27,7 +27,7 @@ export default function Header() {
         {/* Desktop navigation */}
         <nav className="text-lg hidden md:flex gap-6 text-gray-800 font-medium">
           <Link to="/" className="hover:text-green-600">
-            В магазин
+            Главная
           </Link>
 
           {user && !isAdmin && (
@@ -43,8 +43,11 @@ export default function Header() {
 
           {isAdmin && (
             <>
+              <Link to="/orders" className="hover:text-green-600">
+                Мои заказы
+              </Link>
               <Link to="/admin/orders" className="hover:text-green-600">
-                Заказы
+                Все заказы
               </Link>
               <Link to="/admin/products" className="hover:text-green-600">
                 Продукты

@@ -96,14 +96,42 @@ export async function deleteProduct(id) {
   }
 }
 
+// src/services/firestore.js
 export async function uploadProductImage(file) {
   try {
-    const storageRef = ref(storage, `products/${Date.now()}_${file.name}`);
-    await uploadBytes(storageRef, file);
-    return await getDownloadURL(storageRef);
+    console.log("📤 Начинаем загрузку файла:", file.name);
+
+    // Создаем уникальное имя файла
+    const fileName = `products/${Date.now()}_${file.name}`;
+    const storageRef = ref(storage, fileName);
+
+    console.log("📁 Имя файла в Storage:", fileName);
+
+    // Загружаем файл
+    const snapshot = await uploadBytes(storageRef, file);
+    console.log("✅ Файл загружен, snapshot:", snapshot);
+
+    // Получаем URL
+    const downloadURL = await getDownloadURL(snapshot.ref);
+    console.log("🔗 URL файла:", downloadURL);
+
+    return downloadURL;
   } catch (error) {
-    console.error("Upload error:", error);
-    return null;
+    console.error("❌ Upload error:", error);
+    console.error("🔥 Error details:", error.code, error.message);
+
+    // Более детальная обработка ошибок
+    if (error.code === "storage/unauthorized") {
+      throw new Error(
+        "Нет прав для загрузки файлов. Проверьте правила Storage."
+      );
+    } else if (error.code === "storage/canceled") {
+      throw new Error("Загрузка отменена.");
+    } else if (error.code === "storage/unknown") {
+      throw new Error("Неизвестная ошибка при загрузке файла.");
+    }
+
+    throw error;
   }
 }
 
